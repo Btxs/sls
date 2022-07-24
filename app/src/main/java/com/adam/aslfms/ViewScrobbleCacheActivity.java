@@ -332,6 +332,7 @@ public class ViewScrobbleCacheActivity extends AppCompatActivity {
             super(context, c);
         }
 
+        @SuppressLint("Range")
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
 
@@ -341,6 +342,7 @@ public class ViewScrobbleCacheActivity extends AppCompatActivity {
                 mNetApps = null;
             }
 
+            assert mNetApps != null;
             if (mNetApps.length == 0) view.setBackgroundColor(disabledColor);
 
             @SuppressLint("Range") String track = cursor.getString(cursor.getColumnIndex("track"));
