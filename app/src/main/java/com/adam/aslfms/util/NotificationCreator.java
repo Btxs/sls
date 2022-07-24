@@ -29,8 +29,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 import com.adam.aslfms.R;
 import com.adam.aslfms.SettingsActivity;
@@ -99,18 +100,36 @@ public class NotificationCreator {
         }*/
 
         Intent targetIntent = new Intent(context, SettingsActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, targetIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        // update for API31
+        PendingIntent contentIntent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            contentIntent = PendingIntent.getActivity(context, 0, targetIntent, PendingIntent.FLAG_IMMUTABLE);
+        } else {
+            contentIntent = PendingIntent.getActivity(context, 0, targetIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
 
         // Heart intent
         Intent heartIntent = new Intent(context, ScrobblingService.class);
         heartIntent.setAction(ScrobblingService.ACTION_HEART);
-        PendingIntent heartPendingIntent = PendingIntent.getService(context, 0, heartIntent, 0);
+        // update for API31
+        PendingIntent heartPendingIntent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            heartPendingIntent = PendingIntent.getService(context, 0, heartIntent, PendingIntent.FLAG_IMMUTABLE);
+        } else {
+            heartPendingIntent = PendingIntent.getService(context, 0, heartIntent, 0);
+        }
         NotificationCompat.Action heartAction = new NotificationCompat.Action.Builder(R.drawable.ic_heart, context.getString(R.string.heart_title), heartPendingIntent).build();
 
         // Copy intent
         Intent copyIntent = new Intent(context, ScrobblingService.class);
         copyIntent.setAction(ScrobblingService.ACTION_COPY);
-        PendingIntent copyPendingIntent = PendingIntent.getService(context, 0, copyIntent, 0);
+        // update for API31
+        PendingIntent copyPendingIntent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            copyPendingIntent = PendingIntent.getService(context, 0, copyIntent, PendingIntent.FLAG_IMMUTABLE);
+        } else {
+            copyPendingIntent = PendingIntent.getService(context, 0, copyIntent, 0);
+        }
         NotificationCompat.Action copyAction = new NotificationCompat.Action.Builder(R.drawable.ic_content_copy, context.getString(R.string.copy_title), copyPendingIntent).build();
 
         // notification builder

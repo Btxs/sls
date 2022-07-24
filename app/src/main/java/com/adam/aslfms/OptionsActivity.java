@@ -31,9 +31,10 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.MenuItem;
+
+import androidx.core.app.NavUtils;
 
 import com.adam.aslfms.util.AppSettings;
 import com.adam.aslfms.util.MyContextWrapper;

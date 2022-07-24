@@ -32,9 +32,10 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.MenuItem;
+
+import androidx.core.app.NavUtils;
 
 import com.adam.aslfms.service.NetApp;
 import com.adam.aslfms.service.ScrobblingService;

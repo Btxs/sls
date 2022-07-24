@@ -21,6 +21,7 @@
 
 package com.adam.aslfms;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -31,8 +32,6 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -46,6 +45,9 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.adam.aslfms.service.NetApp;
 import com.adam.aslfms.service.ScrobblingService;
@@ -341,21 +343,21 @@ public class ViewScrobbleCacheActivity extends AppCompatActivity {
 
             if (mNetApps.length == 0) view.setBackgroundColor(disabledColor);
 
-            String track = cursor.getString(cursor.getColumnIndex("track"));
+            @SuppressLint("Range") String track = cursor.getString(cursor.getColumnIndex("track"));
             TextView trackView = (TextView) view.findViewById(R.id.track);
             trackView.setText(track);
 
-            int time = cursor.getInt(cursor.getColumnIndex("whenplayed"));
+            @SuppressLint("Range") int time = cursor.getInt(cursor.getColumnIndex("whenplayed"));
             String timeString = Util.timeFromUTCSecs(
                     ViewScrobbleCacheActivity.this, time);
             TextView timeView = (TextView) view.findViewById(R.id.when);
             timeView.setText(timeString);
 
-            String artist = cursor.getString(cursor.getColumnIndex("artist"));
+            @SuppressLint("Range") String artist = cursor.getString(cursor.getColumnIndex("artist"));
             TextView artistView = (TextView) view.findViewById(R.id.artist);
             artistView.setText(artist);
 
-            String album = cursor.getString(cursor.getColumnIndex("album"));
+            @SuppressLint("Range") String album = cursor.getString(cursor.getColumnIndex("album"));
             TextView albumView = (TextView) view.findViewById(R.id.album);
             albumView.setText(album);
         }

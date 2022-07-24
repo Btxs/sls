@@ -25,22 +25,23 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.SQLException;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.adam.aslfms.service.NetApp;
 import com.adam.aslfms.util.AppSettings;
 import com.adam.aslfms.util.AuthStatus;
 import com.adam.aslfms.util.ScrobblesDatabase;
 import com.adam.aslfms.util.Util;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;

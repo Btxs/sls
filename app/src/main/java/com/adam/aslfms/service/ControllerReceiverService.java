@@ -31,8 +31,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.service.notification.NotificationListenerService;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 import com.adam.aslfms.util.AppSettings;
 import com.adam.aslfms.util.NotificationCreator;
@@ -44,7 +45,7 @@ import java.util.HashSet;
  * @author a93h
  * @since 1.5.8
  */
-@SuppressWarnings("deprecation")
+//@SuppressWarnings("deprecation")
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 public class ControllerReceiverService extends NotificationListenerService {

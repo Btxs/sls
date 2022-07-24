@@ -32,13 +32,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
 
 import com.adam.aslfms.service.ScrobblingService;
 import com.adam.aslfms.util.AppSettings;
@@ -46,6 +46,7 @@ import com.adam.aslfms.util.MyContextWrapper;
 import com.adam.aslfms.util.ScrobblesDatabase;
 import com.adam.aslfms.util.Util;
 import com.example.android.supportv7.app.AppCompatPreferenceActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * This is the activity that is shown when the user launches

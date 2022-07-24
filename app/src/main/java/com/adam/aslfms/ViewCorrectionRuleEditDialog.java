@@ -20,14 +20,15 @@
 
 package com.adam.aslfms;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
 
 import com.adam.aslfms.util.CorrectionRule;
 import com.adam.aslfms.util.ScrobblesDatabase;

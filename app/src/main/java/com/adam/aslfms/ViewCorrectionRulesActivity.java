@@ -20,13 +20,12 @@
 
 package com.adam.aslfms;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -39,6 +38,9 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.adam.aslfms.util.AppSettings;
 import com.adam.aslfms.util.CorrectionRule;
@@ -214,6 +216,7 @@ public class ViewCorrectionRulesActivity extends AppCompatActivity {
             return LayoutInflater.from(context).inflate(R.layout.correction_rules_row, parent, false);
         }
 
+        @SuppressLint("Range")
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
             TextView trackToChangeView = (TextView) view.findViewById(R.id.track_to_change);
