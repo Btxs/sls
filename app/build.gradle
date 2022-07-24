@@ -5,7 +5,7 @@ android {
     compileSdkVersion 32
     defaultConfig {
         applicationId "com.adam.aslfms"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 32
         versionCode = 62
         versionName = "1.8.0"
